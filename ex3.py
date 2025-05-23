@@ -1,14 +1,21 @@
-nomes = ("Pedro", "Julia", "Matheus", "Caio", "Thais")
+def mostrar_duplas(nome, tupla_nomes):
+    if nome in tupla_nomes:
+        indice = tupla_nomes.index(nome)
+        for i in range(indice + 1, len(tupla_nomes)):
+            print(f"{nome} e {tupla_nomes[i]}")
+nomes = ("Ana", "Bia", "Celi", "Diana", "Eva", "Fabia")
 
-soma = 0
-
+print("Duplas com a lista original:\n")
 for nome in nomes:
-    soma += 1
+    mostrar_duplas(nome, nomes)
 
-i = 0
-while i < soma:
-    j = i + 1
-    while j < soma:
-        print(nomes[i], "e", nomes[j])
-        j += 1
-    i += 1
+
+print("\nAgora vamos adicionar um novo nome à lista.")
+nome_novo = input("Digite um nome para adicionar: ")
+
+
+nomes_atualizados = nomes + (nome_novo,)
+
+print("\nDuplas com o nome adicionado:\n")
+for nome in nomes_atualizados:
+    mostrar_duplas(nome, nomes_atualizados)
